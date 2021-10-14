@@ -1,34 +1,18 @@
-package com.jtelaa.da2.lib.bot;
+package com.jtelaa.da2.lib.control;
 
-import com.jtelaa.da2.lib.control.Messages;
+public enum SysMessages implements Messages {
 
-/**
- * ENUM of mgmt messages that the system interprets for control purposes
- * 
- * @since 2
- * @author Joseph
- */
+    /** Open local log */
+    ESTABLISH_LOCAL_LOG("I WANT TO CONNECT TO THE LOCAL LOG!"),
 
-public enum MgmtMessages implements Messages {
+    /** Close local log */
+    CLOSE_LOCAL_LOG("STOP THE LOCAL LOG")
 
-    /** Heartbeat message */
-    BEAT("ALIVE!"),
-
-    /** ID Request */
-    ID_REQUEST("GIMME DA ID!"),
-
-    /** ID Request */
-    BOT_REQUEST("GIMME DIS BOT!"),
-
-    /** Enable bot CLI */
-    BOT_ENABLE_MESSAGE("Wake Up Bot!"),
-
-    NONE("NO");
     ;
 
     private volatile char[] message;
 
-    MgmtMessages(String sys_message) {
+    SysMessages(String sys_message) {
         message = sys_message.toCharArray();
         
     }
